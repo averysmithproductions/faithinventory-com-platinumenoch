@@ -8,6 +8,8 @@
 
 This is a the front-end website for [faithinventory.com](https://faithinventory.com).
 
+PlatinumEnochStack is declared in the faithinventory-com-infrastructure repo.
+
 It is a Gatsby generated site that provides a curated photo stream user experience similar Instagram and a blog user experience similar to Medium, or Wordpress.
 
 The photo data is managed through ThalliumEli, which is FaithInventory's AWS API service.
