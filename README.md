@@ -6,7 +6,7 @@
 
 ## Project Description
 
-This is a the front-end website for faithinventory.com.
+This is a the front-end website for [faithinventory.com](https://faithinventory.com).
 
 It is a Gatsby generated site that provides a curated photo stream user experience similar Instagram and a blog user experience similar to Medium, or Wordpress.
 
