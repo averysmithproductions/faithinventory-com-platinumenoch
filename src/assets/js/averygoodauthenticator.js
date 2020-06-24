@@ -1,0 +1,120 @@
+const AveryGoodAuthenticator = {
+	sendMagicLink: email => {
+		// if administrator exists
+			// generate temporary signin key
+			// email temporary signin link
+		// else alert user of error
+		const {
+			createTemporarySignInKey,
+			setCookie,
+			IS_SIGNED_IN_MAX_AGE
+		} = AveryGoodAuthenticator.utils
+		const params = {
+			email,
+			signInKey: createTemporarySignInKey(5)
+		}
+		// put admin magic link
+		return fetch('/api/1/inventory/admin/magic-link', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(params),
+		}).then( response => {
+			const authorizationHash = response.headers.get('x-amzn-remapped-authorization')
+			if (authorizationHash) {
+				setCookie('authorizationHash', authorizationHash, IS_SIGNED_IN_MAX_AGE)
+			}
+			return response.json()
+		})
+	},
+	verifyAuthentication: () => {
+		// if administratorHash cookie is set
+			// if isSignedIn cookie is set
+				// sign in (verify)
+			// else
+				// if signin query string parameter is set
+					// get administrator by hash data and signin query string parameter
+					// if administrator exists
+						// set signedIn cookie to last for 7 days
+						// sign in (verify)
+					// else
+						// keep signed out
+				// else
+					// keep signed out
+		// else
+			// keep signed out
+		return new Promise( ( resolve ) => {
+			const { getCookie } = AveryGoodAuthenticator.utils
+			if (getCookie('authorizationHash')) {
+				if (getCookie('isSignedIn')) {
+					// is verified
+					resolve({ 'isVerified': true })
+				} else {
+					const { getQueryStringParameter, getCookie } = AveryGoodAuthenticator.utils
+					const submittedKey = getQueryStringParameter('signin')
+					if (submittedKey) {
+						const headers = {
+							'Content-Type': 'application/json',
+							'Authorization': getCookie('authorizationHash')
+						}
+						fetch(`/api/1/inventory/admin/hash?submittedKey=${submittedKey}`, {
+							method: 'GET',
+							headers
+						}).then( response => response.json() ).then( data => {
+							const { setCookie, IS_SIGNED_IN_MAX_AGE } = AveryGoodAuthenticator.utils
+							setCookie('isSignedIn', 'true', IS_SIGNED_IN_MAX_AGE)
+							resolve({ 'isVerified': true })
+						}).catch( error => {
+							console.error('Error:', error)
+							resolve({ 'isVerified': false })
+						})
+					} else {
+						resolve({ 'isVerified': false })
+					}
+				}
+			} else {
+				resolve({ 'isVerified': false })
+			}
+		})
+	},
+	utils: {
+		// validate email format
+		isValidEmailFormat: email => {
+			var re = /^(?:[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+			return re.test(email);
+		},
+		// get query string parameters
+		getQueryStringParameter: name => {
+			let parameter
+			if (document.location.search.includes('?')) {
+				parameter = document.location.search.split('?')[1].split('&').filter( item => item.includes(`${name}=`))
+				parameter = parameter.length > 0 ? parameter[0].split('=')[1] : undefined
+			}
+	        return parameter
+		},
+		// create temporary sign in key
+		createTemporarySignInKey: (len) => {
+		    const charSet = 'bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVXZYW1234567890';
+		    let randomString = '';
+		    for (let i = 0; i < len; i++) {
+		        let randomPoz = Math.floor(Math.random() * charSet.length);
+		        randomString += charSet.substring(randomPoz,randomPoz+1);
+		    }
+		    return randomString;
+		},
+		// set cookie
+		setCookie: (name, value, maxAge) => {
+			const date = new Date()
+			date.setHours(date.getHours() + 5)
+			document.cookie = `${name}=${value}; max-age=${maxAge}; path=/; domain=${document.location.host}; Secure;`
+		},
+		getCookie: (name) => {
+			let cookie = document.cookie.split(';').filter(item => item.includes(`${name}=`))
+			cookie = cookie.length > 0 ? cookie[0].split('=')[1] : undefined
+			return cookie
+		},
+		IS_SIGNED_IN_MAX_AGE: 604800 // 604800 is 7 days in seconds
+	}
+}
+module.exports = AveryGoodAuthenticator
