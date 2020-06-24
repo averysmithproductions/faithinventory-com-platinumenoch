@@ -8,7 +8,7 @@
 
 This is a the front-end website for [faithinventory.com](https://faithinventory.com).
 
-PlatinumEnochStack is declared in the [faithinventory-com-infrastructure](https://github.com/averysmithproductions/faithinventory-com-infrastructure) repo.
+*PlatinumEnochStack* is declared in the [faithinventory-com-infrastructure](https://github.com/averysmithproductions/faithinventory-com-infrastructure) repo.
 
 It is a Gatsby generated site that provides a curated photo stream user experience similar Instagram and a blog user experience similar to Medium, or Wordpress.
 
