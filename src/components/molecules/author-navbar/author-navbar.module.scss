@@ -1,7 +1,5 @@
 @import "../../../sass/main.scss";
 .authorNavbar {
-	margin-left: 10px;
-	margin-right: 10px;
 	display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -58,6 +56,11 @@
 			border: 2px dashed #805450;
 			border-top: none;
 			border-bottom: none;
+		}
+
+		@media(max-width: $max-mobile-width) {
+			margin-left: 10px;
+			margin-right: 10px;
 		}
 
 		@media(min-width: $min-desktop-width) {

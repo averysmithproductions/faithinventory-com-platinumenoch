@@ -27,8 +27,8 @@ class ItemsListPage extends Component {
     })
     let items = []
     if (window.localStorage.getItem('itemIds')) {
-      const itemIds = window.localStorage.getItem('itemIds').split(',')
-      items = itemIds.map( itemId => inventoryItems[itemId])
+      // get inventory items by local storage id and filter out any that don't exist in the database anymore.
+      items = window.localStorage.getItem('itemIds').split(',').map( itemId => inventoryItems[itemId]).filter( item => !isEmpty(item))
     }
     this.setState({
       inventoryItems: items,

@@ -14,7 +14,7 @@
     }
     ul {
         list-style-type: none;
-        margin: 0;
+        margin: 10px 5px 10px 0;
         padding: 0;
 
         li {
@@ -34,9 +34,8 @@
 
             button {
                 display: block;
-                padding: 12px 20px;
+                padding: 20px;
                 background: #faf3ee;
-                border-radius: 0;
                 width: 100%;
                 text-align: left;
                 border-bottom: 3px solid #efded2;
@@ -63,11 +62,14 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        ul li {
-            display: block;
+        ul {
+            margin-top: 0;
+            li {
+                display: block;
 
-            .ordinal {
-                padding-bottom: 5px;
+                .ordinal {
+                    padding-bottom: 5px;
+                }
             }
         }
     }

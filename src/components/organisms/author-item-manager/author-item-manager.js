@@ -12,7 +12,7 @@ const TOAST_DURATION = 4000 // 3 seconds
 const getDelimitedStringOfIds = (keys, delimiter) => {
 	let ids = ''
 	keys.forEach( (id, i) => {
-		const key = id.split('.jpg')[0]
+		const key = id.split('inventory/items/')[1].split('.jpg')[0]
 		ids += i === 0 ? key : `${delimiter}${key}`
 	})
 	return ids
@@ -185,7 +185,7 @@ class AuthorItemManager extends Component {
 					uploadFilesToS3(s3UrlData.map( datum => datum.uploadURL ), renamedFiles)
 					params['images'] = renamedFiles.map( file => `inventory/items/${file.name}` )
 				} else if (keyOrder) {
-					params['images'] = keyOrder.map( key => `inventory/items/${key}` )
+					params['images'] = keyOrder
 				}
 				// notify user of loading state
 				let closeNotification
