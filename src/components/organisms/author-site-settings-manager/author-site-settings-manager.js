@@ -26,9 +26,10 @@ class AuthorSiteSettingsManager extends Component {
 			const { getCookie } = AveryGoodAuthenticator.utils
 			const headers = {
 				'Content-Type': 'application/json',
-				'Authorization': getCookie('authorizationHash')
+				'Authorization': getCookie('authorizationHash'),
+				'x-api-key': process.env.GATSBY_THALLIUMELI_API_KEY
 			}
-			fetch(`/api/1/inventory/admin/cloudfront-cache`, {
+			fetch(`/api/1/admin/cloudfront-cache`, {
 				method: 'DELETE',
 				headers
 			}).then( response => {

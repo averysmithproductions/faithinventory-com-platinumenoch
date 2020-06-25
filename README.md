@@ -4,6 +4,10 @@
 
 [<img title="ThalliumEli icon" src="https://user-images.githubusercontent.com/261457/85481153-4a511500-b58f-11ea-8020-ec01f0b878f9.png" width="90" />](https://github.com/averysmithproductions/faithinventory-com-infrastructure#diagram)
 
+Prerequisites
+- [An AWS Account with programmatic permission](https://aws.amazon.com/)
+- [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)
+
 ## Project Description
 
 This is a the front-end website for [faithinventory.com](https://faithinventory.com).
@@ -41,7 +45,14 @@ AWS_REGION=<awsRegion>
 AWS_MEDIA_BUCKET=<environment>-platinumenoch-media
 AWS_APP_BUCKET=<environment>-platinumenoch
 HOSTNAME=[<environment>.]<domainName>
+GATSBY_THALLIUMELI_API_KEY=<environmentThalliumEliApiKey>
 ```
+
+The ThalliumEli api key restricts requests to all `/api/1/admin/` routes that are performed by PlatinumEnoch. The value can be found at:
+
+https://console.aws.amazon.com/apigateway/home?region=us-east-1#/api-keys/
+
+Under `<environment>-ThalliumEliApiKey`
 
 3. Seed Blog
 

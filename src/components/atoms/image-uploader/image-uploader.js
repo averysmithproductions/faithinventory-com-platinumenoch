@@ -32,7 +32,7 @@ class ImageUploader extends Component {
 		} else if (dataType === 'default') {
 			let list = targetArray.filter( item => item.key !== filename )
 			list = this.convertToDragSortableListData(list)
-			const keyOrder = list.map ( item => item.key )
+			const keyOrder = list.map ( item => item.content.key )
 			this.setState({ list }, () => {
 				onChange({ keyOrder })
 			})

@@ -12,7 +12,7 @@ const TOAST_DURATION = 4000 // 3 seconds
 const getDelimitedStringOfIds = (keys, delimiter) => {
 	let ids = ''
 	keys.forEach( (id, i) => {
-		const key = id.split('.jpg')[0]
+		const key = id.split('inventory/items/')[1].split('.jpg')[0]
 		ids += i === 0 ? key : `${delimiter}${key}`
 	})
 	return ids
@@ -139,7 +139,8 @@ class AuthorItemManager extends Component {
 				const { getCookie } = AveryGoodAuthenticator.utils
 				const headers = {
 					'Content-Type': 'application/json',
-					'Authorization': getCookie('authorizationHash')
+					'Authorization': getCookie('authorizationHash'),
+					'x-api-key': process.env.GATSBY_THALLIUMELI_API_KEY
 				}
 				// if there are images and these images have not been previously uploaded AND they should be uploaded 
 					// get s3 pre-signed upload urls
@@ -150,7 +151,7 @@ class AuthorItemManager extends Component {
 				const { files, keyOrder } = imagesValue
 				if (files && !isEqual(files, previouslySavedImagesValue.files)) {
 					// retrieve s3 upload urls
-					let result = await fetch(`/api/1/inventory/admin/s3/urls?amount=${files.length}`, {
+					let result = await fetch(`/api/1/admin/inventory/s3/urls?amount=${files.length}`, {
 						method: 'GET',
 						headers
 					}).catch( error => {
@@ -184,7 +185,7 @@ class AuthorItemManager extends Component {
 					uploadFilesToS3(s3UrlData.map( datum => datum.uploadURL ), renamedFiles)
 					params['images'] = renamedFiles.map( file => `inventory/items/${file.name}` )
 				} else if (keyOrder) {
-					params['images'] = keyOrder.map( key => `inventory/items/${key}` )
+					params['images'] = keyOrder
 				}
 				// notify user of loading state
 				let closeNotification
@@ -196,7 +197,7 @@ class AuthorItemManager extends Component {
 					duration: null
 				})
 				if (mode === 'CREATE') {
-					fetch(`/api/1/inventory/item`, {
+					fetch(`/api/1/admin/inventory/item`, {
 						method: 'POST',
 						headers,
 						body: JSON.stringify(params),
@@ -220,7 +221,7 @@ class AuthorItemManager extends Component {
 						console.error( error )
 					})
 				} else if (mode === 'UPDATE') {
-					fetch(`/api/1/inventory/items/${selectedItem.alternative_id}`, {
+					fetch(`/api/1/admin/inventory/items/${selectedItem.alternative_id}`, {
 						method: 'PUT',
 						headers,
 						body: JSON.stringify(params),
@@ -253,7 +254,7 @@ class AuthorItemManager extends Component {
 									const imageFilenames = !isEmpty(previouslySavedImageFilenames) ? previouslySavedImageFilenames : selectedItem.images
 									const imagesToBeDeleted = imageFilenames.filter( key => !params['images'].includes(key) )
 									const deleteUnusedImagesFromS3 = ids => {
-										fetch(`/api/1/inventory/admin/s3/images?ids=${ids}`, {
+										fetch(`/api/1/admin/inventory/s3/images?ids=${ids}`, {
 											method: 'DELETE',
 											headers
 										}).catch( error => {
@@ -289,19 +290,20 @@ class AuthorItemManager extends Component {
 			const { getCookie } = AveryGoodAuthenticator.utils
 			const headers = {
 				'Content-Type': 'application/json',
-				'Authorization': getCookie('authorizationHash')
+				'Authorization': getCookie('authorizationHash'),
+				'x-api-key': process.env.GATSBY_THALLIUMELI_API_KEY
 			}
 			const {
 				selectedItem
 			} = this.state
 			const ids = getDelimitedStringOfIds(selectedItem.images, ',')
-			fetch(`/api/1/inventory/admin/s3/images?ids=${ids}`, {
+			fetch(`/api/1/admin/inventory/s3/images?ids=${ids}`, {
 				method: 'DELETE',
 				headers
 			}).catch( error => {
 				console.error(error)
 			})
-			fetch(`/api/1/inventory/items/${selectedItem.alternative_id}`, {
+			fetch(`/api/1/admin/inventory/items/${selectedItem.alternative_id}`, {
 				method: 'DELETE',
 				headers
 			}).then( result => {
