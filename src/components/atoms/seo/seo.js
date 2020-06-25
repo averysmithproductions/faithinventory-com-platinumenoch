@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, keywords, lang, meta, title }) {
-  const { site } = useStaticQuery(
+  const { openGraphJpg, site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +19,12 @@ function SEO({ description, keywords, lang, meta, title }) {
             title
             description
             author
+          }
+        }
+        openGraphJpg: imageSharp(fluid: {originalName: {eq: "open-graph.jpg"}})  {
+          id
+          fluid {
+            src
           }
         }
       }
@@ -66,6 +72,10 @@ function SEO({ description, keywords, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `og:image`,
+          content: openGraphJpg.fluid.src,
         }
       ].concat(
         keywords.length > 0

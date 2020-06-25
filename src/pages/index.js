@@ -33,7 +33,7 @@ class IndexPage extends Component {
     const { location } = this.props
     return (
       <Layout location={location}>
-        <SEO title='FaithInventory Home' keywords={['jesus', 'black', 'negroland', 'survivalist', 'hebrew', 'christ']} />
+        <SEO title='Home' keywords={['jesus', 'black', 'negroland', 'survivalist', 'hebrew', 'christ']} />
         <CardCollection
           inventoryItems={inventoryItems}
           location={location}
