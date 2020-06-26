@@ -16,12 +16,12 @@ This is a the front-end website for [faithinventory.com](https://faithinventory.
 
 It is a Gatsby generated site that provides a curated photo stream user experience similar Instagram and a blog user experience similar to Medium, or Wordpress.
 
-The photo data is managed through ThalliumEli, which is FaithInventory's AWS API service.
+The photo data is managed through ThalliumEli, which is Faith Inventory's AWS API service.
 
 Each time Gatsby is run, it fetches the photo stream data from ThalliumEli, and stores it as json at:
 `src/data/auth/inventoryItems.json`.
 
-PlatinumEnoch is hosted in an AWS S3 Bucket, and cached behind BariumNahum, FaithInventory's AWS CDN layer.
+PlatinumEnoch is hosted in an AWS S3 Bucket, and cached behind BariumNahum, Faith Inventory's AWS CDN layer.
 
 ### Local Development
 

@@ -9,7 +9,7 @@ import styles from './about.module.scss'
 
 const AboutPage = ({ data, location }) => (
   <Layout location={location} sectionTitle='About'>
-    <SEO title="About FaithInventory" />
+    <SEO title="About" />
     <BannerImage cn={styles.psalm_1_1} src={data.psalm_1_1Jpg.fluid.originalImg}>
 		<p>Blessed is the man <br />that <em>walketh</em> not in the <br />counsel of the ungodly, <br />nor <em>standeth</em> in the way of sinners, <br />nor <em>sitteth</em> in the seat of the scornful. - Psalm 1:1</p>
 	</BannerImage>
@@ -20,7 +20,7 @@ const AboutPage = ({ data, location }) => (
 		<p>And he shall be like a tree planted by the rivers of water, <br />that bringeth forth his fruit in his season; his leaf also shall not wither; <br />and whatsoever he doeth shall prosper. - Psalm 1:3</p>
 	</BannerImage>
 	<ContentWindow>
-		<p>Hi,<br />My name is Avery, and I created <strong>FaithInventory</strong> as a resource to house many of the things I’ve learned and experienced during my journey as a spiritual son of the God of the Bible.</p>
+		<p>Hi,<br />My name is Avery, and I created <strong>Faith Inventory</strong> as a resource to house many of the things I’ve learned and experienced during my journey as a spiritual son of the God of the Bible.</p>
 		<p>The Heavenly Father, as referred to by Jesus (YahuSha), has revealed to me certain lessons and perspectives that have helped me better understand my life, and my purpose. So many people have big, arresting questions such as:</p>
 		<ul>
 			<li>Why do I exist?</li>
@@ -29,7 +29,7 @@ const AboutPage = ({ data, location }) => (
 			<li>What should I do in a major life event?</li>
 		</ul>
 		<p>I don’t know if I’ll be able to answer all of these questions in a way that is satisfactory to you but I will provide you the answers that are satisfactory for me.</p>
-		<p>I will answer many of above questions in future posts but as far as faith goes, I'm not here to convince you of the gift of salvation. Having that revelation will allow you to fully utilize what FaithInventory has to offer. If you do not subscribe to the gospel, much of what is covered is not going to make sense.</p>
+		<p>I will answer many of above questions in future posts but as far as faith goes, I'm not here to convince you of the gift of salvation. Having that revelation will allow you to fully utilize what Faith Inventory has to offer. If you do not subscribe to the gospel, much of what is covered is not going to make sense.</p>
 		<p>That said, I’d like to refer you to a small pamphlet, entitled, Sit, Walk, Stand.</p>
 		<div className='row'>
 			<div className='col-xs-12 col-sm-offset-1 col-sm-4'>

@@ -16,7 +16,7 @@ const BlogIndexPage = ({ data, location }) => {
   })
   return (
     <Layout location={location} sectionTitle='Blog'>
-      <SEO title="FaithInventory Blog" />
+      <SEO title="Blog" />
       <ExcerptCollection
         location={location}
         postExcerpts={postExcerpts}
