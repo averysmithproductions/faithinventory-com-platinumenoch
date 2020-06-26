@@ -7,11 +7,12 @@ import styles from './blog-post.module.scss'
 
 const BlogPost = ({ location, pageContext }) => {
 	const { author, coverPhoto, date, excerpt, html, next, previous, s3ObjectMap, tags, title } = pageContext
+	const bannerImageSrc = s3ObjectMap[coverPhoto].childImageSharp.fluid.src
 	const bannerImage = (
 		<BannerImage
 			backgroundPosition="center"
 			cn={styles.bannerImage}
-			src={s3ObjectMap[coverPhoto].childImageSharp.fluid.src}>
+			src={bannerImageSrc}>
 			<h2>{title}</h2>
 		</BannerImage>
 	)
@@ -28,6 +29,7 @@ const BlogPost = ({ location, pageContext }) => {
 			<SEO
 				description={excerpt}
 				keywords={tags}
+				openGraphImgSrc={bannerImageSrc}
 				title={title}
 			/>
 			<BlogNavbar next={next} previous={previous} />

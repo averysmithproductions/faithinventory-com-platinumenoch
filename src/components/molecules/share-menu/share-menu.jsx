@@ -6,7 +6,11 @@ import styles from './share-menu.module.scss'
 import classNames from 'classnames'
 import { isEmpty } from 'lodash'
 
-const ShareMenu = ({ cn, url }) => {
+const ShareMenu = ({ cn, url, tags }) => {
+	let hashTags = ''
+	if(!isEmpty(tags)) {
+		hashTags = tags.map( tag => `#${tag}`).join(' ')
+	}
 	const menuData = [{
 		fontIcon: 'envelope',
 		label: "Email",
@@ -21,22 +25,22 @@ const ShareMenu = ({ cn, url }) => {
 		fontIcon: 'twitter',
 		label: "Twitter",
 		service: 'twitter',
-		message: `Check this out: ${url} #believers #negroland #hebrew #jesus #noantiblackracism`
+		message: `Check this out: ${url} ${hashTags}`
 	}, {
 		fontIcon: 'whatsapp',
 		label: "Whatsapp",
 		service: 'whatsapp',
-		message: `Hey check this out: ${url}`
+		message: `Hey check this out: ${url} ${hashTags}`
 	}, {
 		fontIcon: 'pinterest',
 		label: "Pinterest",
 		service: 'pinterest',
-		message: `check out Melalogic #believers #negroland #hebrew #jesus #noantiblackracism`
+		message: `check out faithinventory.com ${hashTags}`
 	}, {
 		fontIcon: 'facebook',
 		label: "Facebook",
 		service: 'facebook',
-		message: `Hey check this out: ${url} #believers #negroland #hebrew #jesus #noantiblackracism`
+		message: `Hey check this out: ${url} ${hashTags}`
 	}]
 	const buttons = menuData.map( ({ fontIcon, label, service, message }, i) => <li key={i}><Button
 		fontIcon={fontIcon}
@@ -57,6 +61,14 @@ const ShareMenu = ({ cn, url }) => {
 			<ul>{buttons}</ul>
 		</div>
 	)
+}
+
+ShareMenu.propTypes = {
+	hashTags: PropTypes.array
+}
+
+ShareMenu.defaultProps = {
+	hashTags: []
 }
 
 export default ShareMenu

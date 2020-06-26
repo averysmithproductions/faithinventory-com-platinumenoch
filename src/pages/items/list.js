@@ -37,7 +37,7 @@ class ItemsListPage extends Component {
   }
   onEmailButtonClick() {
     const { inventoryItems } = this.state
-    let message = 'My FaithInventory List:'
+    let message = 'My Faith Inventory List:'
     inventoryItems.forEach( ( { node: { categories, moreInfoUrl, price, title } }, i) => {
       message += '\n'
       message += `\n${i + 1}. ${title}`
@@ -64,7 +64,7 @@ class ItemsListPage extends Component {
     )
     return (
       <Layout location={location}>
-        <SEO title='Your FaithInventory List' />
+        <SEO title='Your List' />
         <ContentWindow bannerImage={bannerImage}>
           <div className={styles.message}>
             {inventoryItems && inventoryItems.length === 0 && <Fragment>

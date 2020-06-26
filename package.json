@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "faithinventory.com",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "a curated list of items and understandings for my spiritual siblings to thrive during times of uncertainty",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Avery Smith <avery@faithinventory.com>",
   "dependencies": {
     "@robinmetral/gatsby-source-s3": "^1.1.1",
     "atoms": "file:src/components/atoms",
@@ -67,9 +67,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/averysmithproductions/faithinventory-com-platinumenoch"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/averysmithproductions/faithinventory-com-platinumenoch/issues"
   }
 }

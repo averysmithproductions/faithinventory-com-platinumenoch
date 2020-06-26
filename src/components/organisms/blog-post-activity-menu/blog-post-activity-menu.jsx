@@ -45,7 +45,7 @@ class BlogPostActivityMenu extends Component {
 							this.onShareButtonClick()
 						}}
 					/>
-					{isShareMenuOpen && <ShareMenu url={document.location} />}
+					{isShareMenuOpen && <ShareMenu url={document.location} tags={tags} />}
 				</div>
 			</div>
 		)
