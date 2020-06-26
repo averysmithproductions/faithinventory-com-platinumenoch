@@ -70,7 +70,11 @@ class InventoryItemTemplate extends Component {
 				inventoryItemEvent={this.state.inventoryItemEvent}
 				isModal={isModal}
 				location={location}>
-				<SEO title={title} keywords={categories} />
+				<SEO
+					title={title}
+					keywords={categories}
+					openGraphImgSrc={s3ObjectList[0].childImageSharp.fluid.src}
+				/>
 				<div className={windowClassName}>
 					<div className={styles.gallery} onDoubleClick={() => { this.onDoubleClick() }}>
 						{shouldShowDoubleClickAnimation && <div className={styles.likeAnimation}>

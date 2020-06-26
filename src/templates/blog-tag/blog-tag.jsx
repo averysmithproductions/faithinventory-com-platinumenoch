@@ -12,7 +12,7 @@ const BlogTagTemplate = ({ location, pageContext: { allPostExcerpts, s3ObjectMap
     }, [])
     return (
     <Layout location={location} sectionTitle="Blog">
-      <SEO title='FaithInventory Blog Tags' keywords={taxonomies} />
+      <SEO title='Blog Tags' keywords={taxonomies} />
       <ExcerptCollection
         location={location}
         postExcerpts={allPostExcerpts}

@@ -10,8 +10,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, keywords, lang, meta, title }) {
-  const { openGraphJpg, site } = useStaticQuery(
+function SEO({ description, keywords, lang, meta, openGraphImgSrc, title }) {
+  const { defaultOpenGraphImg, site } = useStaticQuery(
     graphql`
       query {
         site {
@@ -21,7 +21,7 @@ function SEO({ description, keywords, lang, meta, title }) {
             author
           }
         }
-        openGraphJpg: imageSharp(fluid: {originalName: {eq: "open-graph.jpg"}})  {
+        defaultOpenGraphImg: imageSharp(fluid: {originalName: {eq: "open-graph.jpg"}})  {
           id
           fluid {
             src
@@ -32,6 +32,7 @@ function SEO({ description, keywords, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaOpenGraphImgSrc = openGraphImgSrc || defaultOpenGraphImg.fluid.src
 
   return (
     <Helmet
@@ -74,8 +75,8 @@ function SEO({ description, keywords, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          name: `og:image`,
-          content: openGraphJpg.fluid.src,
+          name: 'og:image',
+          content: metaOpenGraphImgSrc
         }
       ].concat(
         keywords.length > 0
