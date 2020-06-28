@@ -73,7 +73,7 @@ class InventoryItemTemplate extends Component {
 				<SEO
 					title={title}
 					keywords={categories}
-					openGraphImgSrc={s3ObjectList[0].childImageSharp.fluid.src}
+					//openGraphImgSrc={s3ObjectList[0].childImageSharp.fluid.src}
 				/>
 				<div className={windowClassName}>
 					<div className={styles.gallery} onDoubleClick={() => { this.onDoubleClick() }}>
@@ -85,9 +85,10 @@ class InventoryItemTemplate extends Component {
 							naturalSlideWidth={300}
 							naturalSlideHeight={311}
 							isIntrinsicHeight={true}
-							totalSlides={s3ObjectList.length}>
+							//totalSlides={s3ObjectList.length}
+							>
 							<Slider className={styles.slider} moveThreshold={.05}>
-          						{s3ObjectList.map( ({ childImageSharp, publicURL }, i) => <Slide key={i} index={i} className={styles.slide}><Image src={childImageSharp.fluid.src} /></Slide> )}
+          						{/*s3ObjectList.map( ({ childImageSharp, publicURL }, i) => <Slide key={i} index={i} className={styles.slide}><Image src={childImageSharp.fluid.src} /></Slide> )*/}
           					</Slider>
           					<div className={styles.leftAndRightButtons}>
 	          					<div className={styles.leftButton}>
