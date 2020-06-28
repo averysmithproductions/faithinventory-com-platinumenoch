@@ -13,7 +13,7 @@ const Card = ({ categories, history, image, inventoryItems, price, slugId, title
 			previousAmountToShow: history.amountToShow,
 			defaultCategoryFilterScrollLeft: history.defaultCategoryFilterScrollLeft
 		}}>
-		{/*<img src={image.childImageSharp.fluid.src} alt={title} />*/}
+		<img src={image.childImageSharp.fluid.src} alt={title} />
 		<p className={styles.title}>{title}</p>
 		<div className={styles.additionalInfo}>
 			<div>{categories.map( (category, i) => (
