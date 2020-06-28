@@ -6,7 +6,7 @@ const AveryGoodAuthenticator = {
 		// else alert user of error
 		const {
 			createTemporarySignInKey,
-			setCookie,
+			setStorage,
 			IS_SIGNED_IN_MAX_AGE
 		} = AveryGoodAuthenticator.utils
 		const params = {
@@ -23,7 +23,7 @@ const AveryGoodAuthenticator = {
 		}).then( response => {
 			const authorizationHash = response.headers.get('x-amzn-remapped-authorization')
 			if (authorizationHash) {
-				setCookie('authorizationHash', authorizationHash, IS_SIGNED_IN_MAX_AGE)
+				setStorage('authorizationHash', authorizationHash, IS_SIGNED_IN_MAX_AGE)
 			}
 			return response.json()
 		})
@@ -45,25 +45,25 @@ const AveryGoodAuthenticator = {
 		// else
 			// keep signed out
 		return new Promise( ( resolve ) => {
-			const { getCookie } = AveryGoodAuthenticator.utils
-			if (getCookie('authorizationHash')) {
-				if (getCookie('isSignedIn')) {
+			const { getStorage } = AveryGoodAuthenticator.utils
+			if (getStorage('authorizationHash')) {
+				if (getStorage('isSignedIn')) {
 					// is verified
 					resolve({ 'isVerified': true })
 				} else {
-					const { getQueryStringParameter, getCookie } = AveryGoodAuthenticator.utils
+					const { getQueryStringParameter } = AveryGoodAuthenticator.utils
 					const submittedKey = getQueryStringParameter('signin')
 					if (submittedKey) {
 						const headers = {
 							'Content-Type': 'application/json',
-							'Authorization': getCookie('authorizationHash')
+							'Authorization': getStorage('authorizationHash')
 						}
 						fetch(`/api/1/inventory/admin/hash?submittedKey=${submittedKey}`, {
 							method: 'GET',
 							headers
 						}).then( response => response.json() ).then( data => {
-							const { setCookie, IS_SIGNED_IN_MAX_AGE } = AveryGoodAuthenticator.utils
-							setCookie('isSignedIn', 'true', IS_SIGNED_IN_MAX_AGE)
+							const { setStorage, IS_SIGNED_IN_MAX_AGE } = AveryGoodAuthenticator.utils
+							setStorage('isSignedIn', 'true', IS_SIGNED_IN_MAX_AGE)
 							resolve({ 'isVerified': true })
 						}).catch( error => {
 							console.error('Error:', error)
@@ -104,15 +104,36 @@ const AveryGoodAuthenticator = {
 		    return randomString;
 		},
 		// set cookie
-		setCookie: (name, value, maxAge) => {
-			const date = new Date()
-			date.setHours(date.getHours() + 5)
+		setCookie: (name, value, maxAge = 0) => {
 			document.cookie = `${name}=${value}; max-age=${maxAge}; path=/; domain=${document.location.host}; Secure;`
 		},
 		getCookie: (name) => {
 			let cookie = document.cookie.split(';').filter(item => item.includes(`${name}=`))
 			cookie = cookie.length > 0 ? cookie[0].split('=')[1] : undefined
 			return cookie
+		},
+		// set storage
+		setStorage: (name, value, maxAge = 0) => {
+			if (value) {
+				const currentTime = Math.round(Date.now() / 1000)
+				const expiresIn = currentTime + maxAge
+				localStorage.setItem(name, JSON.stringify({ expiresIn, value }))
+			} else {
+				localStorage.removeItem(name)
+			}
+		},
+		getStorage: (name) => {
+			let result = undefined
+			if(localStorage.getItem(name) !== null) {
+				data = JSON.parse(localStorage.getItem(name))
+				const currentTime = Math.round(Date.now() / 1000)
+				if (data.expiresIn > currentTime) {
+					result = data.value
+				} else {
+					localStorage.removeItem(name)
+				}
+			}
+			return result
 		},
 		IS_SIGNED_IN_MAX_AGE: 604800 // 604800 is 7 days in seconds
 	}
