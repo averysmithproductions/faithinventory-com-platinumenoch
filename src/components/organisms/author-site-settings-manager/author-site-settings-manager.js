@@ -36,7 +36,7 @@ class AuthorSiteSettingsManager extends Component {
 				this.setState({ LOADING_STATE: 'loaded' }, () => {
 					closeNotification()
 					let message = "<p>Your site changes are being deployed 🚀.</p>"
-					message += `<p>Give it a little time, then visit your updated pages at <a href="https://${process.env.HOSTNAME}" target="_blank">${process.env.HOSTNAME}</a>.</p>`
+					message += `<p>Give it a little time, then visit your updated pages at <a href="https://${process.env.GATSBY_HOSTNAME}" target="_blank">${process.env.GATSBY_HOSTNAME}</a>.</p>`
 					message += "<p>If you don't see your changes, be sure to refresh your browser.</p>"
 					toastedNotes.notify(<Toast htmlMessage={message} fontIcon="synchronize" fullWidth={true} />, { duration: TOAST_DURATION })
 					const delayFormResetToPreventTooManySubmissions = setTimeout(() => {

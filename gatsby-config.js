@@ -66,7 +66,7 @@ module.exports = {
         // Type prefix of entities from server
         typePrefix: "",
         // The url, this should be the endpoint you are attempting to pull data from
-        url: `https://${process.env.HOSTNAME}/api/1/inventory/items/graphql`,
+        url: `https://${process.env.GATSBY_HOSTNAME}/api/1/inventory/items/graphql`,
         method: "get",
         headers: {
           "Content-Type": "application/json"
@@ -109,7 +109,7 @@ module.exports = {
         // Only available from version 2.1.0
         entitiesArray: [
           {
-            url: `https://${process.env.HOSTNAME}/api/1/inventory/items`,
+            url: `https://${process.env.GATSBY_HOSTNAME}/api/1/inventory/items`,
             method: "get",
             headers: {
               "Content-Type": "application/json"
