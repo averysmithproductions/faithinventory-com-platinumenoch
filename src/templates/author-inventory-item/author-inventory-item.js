@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { graphql, navigate } from 'gatsby'
+import { SEO } from 'atoms'
 import { AuthorItemManager, AuthorLayout } from 'organisms'
 import AveryGoodAuthenticator from '../../assets/js/averygoodauthenticator'
 
@@ -28,6 +29,7 @@ class AuthorInventoryItemTemplate extends Component {
 		const { data: { item }, location, pageContext: { allInventoryItems, s3ObjectList } } = this.props
 		return(
 			<AuthorLayout isAuthenticated={isAuthenticated} location={location} sectionTitle='Manage'>
+				<SEO title="Edit Item" />
 				{isAuthenticated && <AuthorItemManager
 					allInventoryItems={allInventoryItems}
 					mode={'UPDATE'}
