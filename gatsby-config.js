@@ -12,12 +12,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `faithinventory.com`,
+        name: `Faith Inventory`,
         short_name: `Faith Inventory`,
         start_url: `/`,
         background_color: `#e6ccbe`,
         theme_color: `#e6ccbe`,
-        display: `fullscreen`,
+        display: `browser`,
         icon: `src/assets/img/favicon.png`, // This path is relative to the root of the site.
         crossOrigin: `use-credentials`,
         cache_busting_mode: 'none'
@@ -33,6 +33,7 @@ module.exports = {
           }
        }
     },
+    //'gatsby-plugin-remove-serviceworker',
     /* Plugin for Web App Metadata */
     `gatsby-plugin-react-helmet`,
     /* Import Image Files from Data Sources */

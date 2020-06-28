@@ -4,11 +4,10 @@ import { Button } from 'atoms'
 import { Header } from 'organisms'
 import styles from './author-header.module.scss'
 import AveryGoodAuthenticator from '../../../assets/js/averygoodauthenticator'
-
 const signOut = () => {
-  const { setCookie } = AveryGoodAuthenticator.utils
-  setCookie('isSignedIn', true, 0)
-  setCookie('authorizationHash', true, 0)
+  const { setStorage } = AveryGoodAuthenticator.utils
+  setStorage('isSignedIn', undefined)
+  setStorage('authorizationHash', undefined)
   // refresh the page and clear any search items appended to the url
   document.location.href = document.location.origin + document.location.pathname
 }

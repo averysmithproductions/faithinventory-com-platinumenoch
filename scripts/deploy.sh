@@ -9,5 +9,5 @@ if [ $ENVIRONMENT = 'prod' ]; then
     echo "Please use a different environment."
     exit 1
 else
-	aws s3 sync ./public s3://"$ENVIRONMENT"-platinumenoch --delete --profile $AWS_PROFILE
+	aws s3 sync ./public s3://"$ENVIRONMENT"-platinumenoch --delete --exclude '*.DS_Store' --profile $AWS_PROFILE
 fi
