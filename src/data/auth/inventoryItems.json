@@ -1,13 +1,13 @@
 [
   {
-    "id": "2564d7b1-d844-421d-ba7d-a61676a51d1d",
-    "createdAt": 1593219279,
-    "slugId": "fkI1vfgfQsyeMyGpQPCBew",
+    "id": "1c44ad3e-ef7d-42c8-8f45-81d09e9f7062",
+    "createdAt": 1593276878,
+    "slugId": "Au9mw2rtRveBySF1pk8T9Q",
     "title": "Canned Salmon",
     "summary": "With it being extremely healthy, relatively inexpensive and easily accessible, canned salmon is the best deal in town.",
     "images": [
-      "inventory/items/de6c8dc3-97d1-4396-bb40-44c8f77c9385.jpg",
-      "inventory/items/f64df7fa-edcd-416d-840b-5e5d742f268c.jpg"
+      "inventory/items/79d9d55e-e6f1-4e6f-bdca-1083ef238a6a.jpg",
+      "inventory/items/6d2b2fa4-199e-4483-a72f-9edce4e49aec.jpg"
     ],
     "categories": [
       "food"
@@ -16,14 +16,14 @@
     "moreInfoUrl": "https://www.wildplanetfoods.com/product/wild-sockeye-salmon/"
   },
   {
-    "id": "cfcdb33e-5531-4397-b94f-08711d217c53",
-    "createdAt": 1593219268,
-    "slugId": "Nbk1J-mdTxeLxtinkxgOaA",
+    "id": "263cf8a6-08b6-40e0-aaf2-ff3dbca7b562",
+    "createdAt": 1593276887,
+    "slugId": "W80QOaKfRjGIqC609_b4ew",
     "title": "Canned Salmon",
     "summary": "With it being extremely healthy, relatively inexpensive and easily accessible, canned salmon is the best deal in town.",
     "images": [
-      "inventory/items/3bef5591-3aae-44de-bae8-c3a797fb44d7.jpg",
-      "inventory/items/77599380-ed59-4652-8f02-76ef87dcd8c7.jpg"
+      "inventory/items/7d2873e1-d223-41e6-9686-1bf2a6fb9140.jpg",
+      "inventory/items/c50c798d-dc94-4ff0-8cf9-35dcde903c07.jpg"
     ],
     "categories": [
       "food"
