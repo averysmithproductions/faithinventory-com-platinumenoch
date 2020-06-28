@@ -23,10 +23,10 @@ class AuthorSiteSettingsManager extends Component {
 			}, {
 				duration: null
 			})
-			const { getCookie } = AveryGoodAuthenticator.utils
+			const { getStorage } = AveryGoodAuthenticator.utils
 			const headers = {
 				'Content-Type': 'application/json',
-				'Authorization': getCookie('authorizationHash'),
+				'Authorization': getStorage('authorizationHash'),
 				'x-api-key': process.env.GATSBY_THALLIUMELI_API_KEY
 			}
 			fetch(`/api/1/admin/cloudfront-cache`, {

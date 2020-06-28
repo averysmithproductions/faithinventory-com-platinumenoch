@@ -136,10 +136,10 @@ class AuthorItemManager extends Component {
 	        	}
             }
             this.setState({ LOADING_STATE: 'loading' }, async () => {
-				const { getCookie } = AveryGoodAuthenticator.utils
+				const { getStorage } = AveryGoodAuthenticator.utils
 				const headers = {
 					'Content-Type': 'application/json',
-					'Authorization': getCookie('authorizationHash'),
+					'Authorization': getStorage('authorizationHash'),
 					'x-api-key': process.env.GATSBY_THALLIUMELI_API_KEY
 				}
 				// if there are images and these images have not been previously uploaded AND they should be uploaded 
@@ -287,10 +287,10 @@ class AuthorItemManager extends Component {
 			}, {
 				duration: null
 			})
-			const { getCookie } = AveryGoodAuthenticator.utils
+			const { getStorage } = AveryGoodAuthenticator.utils
 			const headers = {
 				'Content-Type': 'application/json',
-				'Authorization': getCookie('authorizationHash'),
+				'Authorization': getStorage('authorizationHash'),
 				'x-api-key': process.env.GATSBY_THALLIUMELI_API_KEY
 			}
 			const {

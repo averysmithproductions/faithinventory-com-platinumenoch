@@ -1,13 +1,13 @@
 [
   {
-    "id": "1c44ad3e-ef7d-42c8-8f45-81d09e9f7062",
-    "createdAt": 1593276878,
-    "slugId": "Au9mw2rtRveBySF1pk8T9Q",
-    "title": "Canned Salmon",
+    "id": "2564d7b1-d844-421d-ba7d-a61676a51d1d",
+    "createdAt": 1593219279,
+    "slugId": "fkI1vfgfQsyeMyGpQPCBew",
+    "title": "canned salmon just a test.",
     "summary": "With it being extremely healthy, relatively inexpensive and easily accessible, canned salmon is the best deal in town.",
     "images": [
-      "inventory/items/79d9d55e-e6f1-4e6f-bdca-1083ef238a6a.jpg",
-      "inventory/items/6d2b2fa4-199e-4483-a72f-9edce4e49aec.jpg"
+      "inventory/items/f64df7fa-edcd-416d-840b-5e5d742f268c.jpg",
+      "inventory/items/de6c8dc3-97d1-4396-bb40-44c8f77c9385.jpg"
     ],
     "categories": [
       "food"
@@ -16,14 +16,31 @@
     "moreInfoUrl": "https://www.wildplanetfoods.com/product/wild-sockeye-salmon/"
   },
   {
-    "id": "263cf8a6-08b6-40e0-aaf2-ff3dbca7b562",
-    "createdAt": 1593276887,
-    "slugId": "W80QOaKfRjGIqC609_b4ew",
+    "id": "6b544d41-491e-4d26-8f97-5a574e0684ae",
+    "createdAt": 1593365865,
+    "slugId": "C5mZjpNrT9-mgSpljMrXqQ",
     "title": "Canned Salmon",
     "summary": "With it being extremely healthy, relatively inexpensive and easily accessible, canned salmon is the best deal in town.",
     "images": [
-      "inventory/items/7d2873e1-d223-41e6-9686-1bf2a6fb9140.jpg",
-      "inventory/items/c50c798d-dc94-4ff0-8cf9-35dcde903c07.jpg"
+      "inventory/items/b5a38a3a-ac95-493e-9de0-9105e226aa2d.jpg",
+      "inventory/items/95cad464-9940-41a2-8630-c5950921ab14.jpg"
+    ],
+    "categories": [
+      "food"
+    ],
+    "price": 45,
+    "moreInfoUrl": "https://www.wildplanetfoods.com/product/wild-sockeye-salmon/"
+  },
+  {
+    "id": "cfcdb33e-5531-4397-b94f-08711d217c53",
+    "createdAt": 1593219268,
+    "slugId": "Nbk1J-mdTxeLxtinkxgOaA",
+    "title": "canned salmon updated with a boat",
+    "summary": "With it being extremely healthy, relatively inexpensive and easily accessible, canned salmon is the best deal in town.",
+    "images": [
+      "inventory/items/7f64ad5c-41a5-40df-b0fe-ab7b69c27596.jpg",
+      "inventory/items/8838240d-27e1-4bfe-b9c2-285d695d6d76.jpg",
+      "inventory/items/9c79e68c-a934-4dfd-b514-891a733788cf.jpg"
     ],
     "categories": [
       "food"

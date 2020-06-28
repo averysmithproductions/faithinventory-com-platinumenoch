@@ -77,7 +77,9 @@ class CardCollection extends Component {
 					/>
 				)}
 				<div className={styles.cardCollection}>
-					{items.map( ({ node: { id, slugId, title, images, categories, price } }, i) => (
+					{items.map( ({ node: { id, slugId, title, images, categories, price } }, i) => {
+						console.log('A--', id, images, s3)
+						return (
 					    <Card
 					      key={i}
 					      categories={categories}
@@ -88,6 +90,7 @@ class CardCollection extends Component {
 					      slugId={slugId}
 					      title={title}
 					    />)
+					}
 					)}
 				</div>
 			</Fragment>
