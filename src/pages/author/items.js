@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { graphql, navigate } from 'gatsby'
+import { SEO } from 'atoms'
 import { AuthorItemManager, AuthorLayout } from 'organisms'
 import AveryGoodAuthenticator from '../../assets/js/averygoodauthenticator'
 
@@ -28,6 +29,7 @@ class AuthorItemsPage extends Component {
 		const { data: { allInventoryItems }, location } = this.props
 		return(
 			<AuthorLayout isAuthenticated={isAuthenticated} location={location} sectionTitle='Manage'>
+				<SEO title="Create Item" />
 				{isAuthenticated && <AuthorItemManager
 					allInventoryItems={allInventoryItems.edges}
 					mode={'CREATE'}

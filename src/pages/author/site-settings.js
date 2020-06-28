@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { navigate } from 'gatsby'
+import { SEO } from 'atoms'
 import { AuthorLayout, AuthorSiteSettingsManager } from 'organisms'
 import AveryGoodAuthenticator from '../../assets/js/averygoodauthenticator'
 
@@ -27,6 +28,7 @@ class AuthorSiteSettingsPage extends Component {
 		const { location } = this.props
 		return(
 			<AuthorLayout isAuthenticated={isAuthenticated} location={location} sectionTitle='Manage'>
+				<SEO title="Site Settings" />
 				{isAuthenticated && <AuthorSiteSettingsManager />}
 			</AuthorLayout>
 		)
