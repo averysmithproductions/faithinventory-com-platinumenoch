@@ -2,6 +2,11 @@
 .label {
     margin-bottom: 10px;
 }
+.hidden {
+    position: absolute;
+    top: -2000px;
+    left: -2000px;
+}
 .textfield {
     padding: 8px;
     border-radius: 10px;
