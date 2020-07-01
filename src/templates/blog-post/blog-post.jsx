@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { BannerImage, SEO } from 'atoms'
-import { BlogNavbar, ContentWindow } from 'molecules'
+import { BlogNavbar, ContentWindow, EmailForm } from 'molecules'
 import { BlogPostActivityMenu, Layout } from 'organisms'
 import styles from './blog-post.module.scss'
 
@@ -36,6 +36,7 @@ const BlogPost = ({ location, pageContext }) => {
 			<ContentWindow bannerImage={bannerImage}>
 				<div dangerouslySetInnerHTML={{'__html': html }} />
 				<BlogPostActivityMenu author={author} date={date} tags={tags} />
+				<EmailForm mode="blogPost" />
 			</ContentWindow>
 			<BlogNavbar next={next} previous={previous} />
 		</Layout>
