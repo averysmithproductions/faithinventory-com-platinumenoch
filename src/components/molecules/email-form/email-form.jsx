@@ -52,7 +52,7 @@ class EmailForm extends Component {
 		return (
 			<div className={className}>
 				<div className={styles.message}>
-					<p>Join, <strong><em>Personal Inventory</em></strong>, my email list to stay in touch as we walk out our life's journey together.
+					<p>Join <strong><em>Personal Inventory</em></strong>, my email list to stay in touch as we walk out our life's journey together.
 					<br /><span className={styles.signature}><i className="font-icon-avery-signature" /></span></p>
 				</div>
 				<form
