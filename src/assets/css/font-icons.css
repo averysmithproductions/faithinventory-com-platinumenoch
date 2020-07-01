@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-icon-avery-signature:before {
+  content: "\e922";
+}
 .font-icon-dislike:before {
   content: "\e921";
 }

@@ -57,6 +57,7 @@ $background-color: #e6ccbe;
 		    	font-size: 15px;
 		    	padding: 10px 20px;
 		    	margin: 0;
+		    	line-height: 100%;
 			}
 		}
 	}
@@ -68,7 +69,7 @@ $background-color: #e6ccbe;
 			padding-right: 0;
 
 			p {
-				margin-bottom: 25px;
+				margin-bottom: 15px;
 			}
 		}
 
@@ -128,5 +129,12 @@ $background-color: #e6ccbe;
 		.form {
 			width: 100%;
 		}
+	}
+}
+.signature {
+	display: inline-block;
+	margin-top: 15px;
+	i {
+		font-size: 48px;
 	}
 }

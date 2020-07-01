@@ -51,7 +51,10 @@ class EmailForm extends Component {
 		})
 		return (
 			<div className={className}>
-				<div className={styles.message}><p>Join the email list to receive tips, insights, discoveries and knowledge as we walk out our life's mission together.</p></div>
+				<div className={styles.message}>
+					<p>Join, <strong><em>Personal Inventory</em></strong>, my email list to stay in touch as we walk out our life's journey together.
+					<br /><span className={styles.signature}><i className="font-icon-avery-signature" /></span></p>
+				</div>
 				<form
 					_lpchecked="1"
 					action="https://tinyletter.com/faithinventory"
