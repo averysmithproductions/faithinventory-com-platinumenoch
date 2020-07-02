@@ -2,14 +2,14 @@
 tags:
 - test
 title: Forty Proverbs for Forty Years
-date: 2020-06-08T04:00:00Z
-slug: "forty-proverbs-forty-years"
+date: 2020-06-08T04:00:00.000+00:00
+slug: forty-proverbs-forty-years
 author: Avery Smith
 coverPhoto: posts/images/platinumenoch-blog-post-seed.png
 published: true
 
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames. Egestas tellus rutrum tellus pellentesque eu. Tempor orci dapibus ultrices in iaculis nunc sed augue.
+Testing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames. Egestas tellus rutrum tellus pellentesque eu. Tempor orci dapibus ultrices in iaculis nunc sed augue.
 
 <!-- endexcerpt -->
 
