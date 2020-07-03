@@ -25,3 +25,4 @@ fields:
   label: published
 pages:
 - src/posts/test.md
+- src/posts/winning-versus-looking-good-losing.md
