@@ -1,5 +1,22 @@
 [
   {
+    "id": "1bc7bcc9-7c5b-4700-a6ad-cc0725f9e630",
+    "createdAt": 1593781588,
+    "slugId": "BpSnRI3dTva7Q9HeAczUNg",
+    "title": "test",
+    "summary": "test",
+    "images": [
+      "inventory/items/e2b136d0-6d4a-4efa-846a-32e157e5902c.jpg",
+      "inventory/items/15d1a39a-5b29-4606-b529-65a80884c0c7.jpg",
+      "inventory/items/4c707a94-68ae-4c14-8b3c-e3eb4cf2d1bd.jpg"
+    ],
+    "categories": [
+      "food"
+    ],
+    "price": 49.95,
+    "moreInfoUrl": "https://www.amazon.com/dp/B00LE4RGOE?tag=duckduckgo-exp-b-20&linkCode=osi&th=1&psc=1"
+  },
+  {
     "id": "1dd19abf-ed85-4af2-bcc2-5c8666f05f82",
     "createdAt": 1593376602,
     "slugId": "ZN0MwC9qQ6CX3eE5jFTgVg",
@@ -48,6 +65,21 @@
     "moreInfoUrl": "https://www.wildplanetfoods.com/product/wild-sockeye-salmon/"
   },
   {
+    "id": "42789054-fefa-4630-9822-8446245e76d3",
+    "createdAt": 1593831721,
+    "slugId": "fz7qspSJRKaoTEotdHVNmA",
+    "title": "test 3",
+    "summary": "test",
+    "images": [
+      "inventory/items/94c9c601-cbc7-4930-89fa-ca8110ee063f.jpg"
+    ],
+    "categories": [
+      "food"
+    ],
+    "price": 2,
+    "moreInfoUrl": "https://www.amazon.com/dp/B00LE4RGOE?tag=duckduckgo-exp-b-20&linkCode=osi&th=1&psc=1"
+  },
+  {
     "id": "5aaf88fd-68f8-48fe-97e0-ea7e1996cadb",
     "createdAt": 1593376503,
     "slugId": "Zy6vjRMlTUKNPpcvByIObw",
@@ -56,6 +88,22 @@
     "images": [
       "inventory/items/026f90ea-c22c-4075-9d07-4643907779ff.jpg",
       "inventory/items/4577bf71-9095-4ba5-be9b-2b17622dd3d4.jpg"
+    ],
+    "categories": [
+      "food"
+    ],
+    "price": 45,
+    "moreInfoUrl": "https://www.wildplanetfoods.com/product/wild-sockeye-salmon/"
+  },
+  {
+    "id": "94e4caa8-14fe-4087-97cd-3ef168e9039e",
+    "createdAt": 1593886897,
+    "slugId": "V4aeQt-kQAOZSAYlMDxGng",
+    "title": "Canned Salmon",
+    "summary": "With it being extremely healthy, relatively inexpensive and easily accessible, canned salmon is the best deal in town.",
+    "images": [
+      "inventory/items/65d809a4-8b8a-46da-945c-d78dd5be2dbd.jpg",
+      "inventory/items/cb127689-070d-45fa-acb2-27564e79e12b.jpg"
     ],
     "categories": [
       "food"

@@ -25,7 +25,6 @@ const AveryGoodAuthenticator = {
 			if (authorizationHash) {
 				setStorage('authorizationHash', authorizationHash, IS_SIGNED_IN_MAX_AGE)
 			}
-			return response.json()
 		})
 	},
 	verifyAuthentication: () => {
@@ -61,13 +60,19 @@ const AveryGoodAuthenticator = {
 						fetch(`/api/1/inventory/admin/hash?submittedKey=${submittedKey}`, {
 							method: 'GET',
 							headers
-						}).then( response => response.json() ).then( data => {
-							const { setStorage, IS_SIGNED_IN_MAX_AGE } = AveryGoodAuthenticator.utils
-							setStorage('isSignedIn', 'true', IS_SIGNED_IN_MAX_AGE)
-							resolve({ 'isVerified': true })
-						}).catch( error => {
-							console.error('Error:', error)
-							resolve({ 'isVerified': false })
+						}).then( async response => {
+							const  { status } = response
+							if (status === 200) {
+								const { setStorage, IS_SIGNED_IN_MAX_AGE } = AveryGoodAuthenticator.utils
+								setStorage('isSignedIn', 'true', IS_SIGNED_IN_MAX_AGE)
+								resolve( { 'isVerified': true })
+							} else if (status === 401 ){
+								let message = await response.json()
+								message = message.error
+								resolve({ 'isVerified': false, message })
+							} else {
+								resolve({ 'isVerified': false })
+							}
 						})
 					} else {
 						resolve({ 'isVerified': false })
@@ -77,6 +82,13 @@ const AveryGoodAuthenticator = {
 				resolve({ 'isVerified': false })
 			}
 		})
+	},
+	signOut: () => {
+	  const { setStorage } = AveryGoodAuthenticator.utils
+	  setStorage('isSignedIn', undefined)
+	  setStorage('authorizationHash', undefined)
+	  // refresh the page and clear any search items appended to the url
+	  document.location.href = document.location.origin + document.location.pathname
 	},
 	utils: {
 		// validate email format
