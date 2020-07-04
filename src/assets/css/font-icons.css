@@ -27,6 +27,9 @@
 .font-icon-avery-signature:before {
   content: "\e922";
 }
+.font-icon-time:before {
+  content: "\e923";
+}
 .font-icon-dislike:before {
   content: "\e921";
 }

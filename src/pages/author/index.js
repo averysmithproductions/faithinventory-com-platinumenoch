@@ -1,7 +1,9 @@
 import React, { Component } from "react"
 import { navigate } from 'gatsby'
+import { Toast } from 'atoms'
 import { AuthorLayout, AuthorSignInForm } from 'organisms'
 import AveryGoodAuthenticator from '../../assets/js/averygoodauthenticator'
+import toastedNotes from 'toasted-notes' 
 
 class AuthorIndexPage extends Component {
 	constructor() {
@@ -13,7 +15,7 @@ class AuthorIndexPage extends Component {
 	componentDidMount() {
 		const { verifyAuthentication } = AveryGoodAuthenticator
 		verifyAuthentication().then( result => {
-			const { isVerified } = result
+			const { isVerified, message } = result
 			if (isVerified) {
 				// navigate to dashboard
 				navigate('/author/items/', {
@@ -21,6 +23,9 @@ class AuthorIndexPage extends Component {
 					replace: true
 				})
 			} else {
+				if(message) {
+					toastedNotes.notify(<Toast message={message} fontIcon="time" />, { duration: 3000 })
+				}
 				this.setState( { shouldShowSignInForm: true })
 			}
 		})

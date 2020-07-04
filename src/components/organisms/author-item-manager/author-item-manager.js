@@ -8,7 +8,7 @@ import AveryGoodAuthenticator from '../../../assets/js/averygoodauthenticator'
 import toastedNotes from 'toasted-notes' 
 import { navigate } from 'gatsby'
 
-const TOAST_DURATION = 4000 // 3 seconds
+const TOAST_DURATION = 4000 // 4 seconds
 const getDelimitedStringOfIds = (keys, delimiter) => {
 	let ids = ''
 	keys.forEach( (id, i) => {
@@ -154,6 +154,12 @@ class AuthorItemManager extends Component {
 					let result = await fetch(`/api/1/admin/inventory/s3/urls?amount=${files.length}`, {
 						method: 'GET',
 						headers
+					}).then( response => {
+						// if access is unauthorized
+							// sign out
+						if(response.status === 401) {
+							AveryGoodAuthenticator.signOut()
+						}
 					}).catch( error => {
 						console.error(error)
 					})
@@ -201,7 +207,14 @@ class AuthorItemManager extends Component {
 						method: 'POST',
 						headers,
 						body: JSON.stringify(params),
-					}).then( response => response.json() ).then( response => {
+					}).then( response => {
+						// if access is unauthorized
+							// sign out
+						if(response.status === 401) {
+							AveryGoodAuthenticator.signOut()
+						}
+						return response.json()
+					}).then( response => {
 						let message
 						if (response.error) {
 							message = response.error
@@ -225,7 +238,14 @@ class AuthorItemManager extends Component {
 						method: 'PUT',
 						headers,
 						body: JSON.stringify(params),
-					}).then( response => response.json() ).then( response => {
+					}).then( response => {
+						// if access is unauthorized
+							// sign out
+						if(response.status === 401) {
+							AveryGoodAuthenticator.signOut()
+						}
+						return response
+					}).then( response => {
 						let message
 						const state = {
 							LOADING_STATE: 'loaded'
@@ -300,6 +320,12 @@ class AuthorItemManager extends Component {
 			fetch(`/api/1/admin/inventory/s3/images?ids=${ids}`, {
 				method: 'DELETE',
 				headers
+			}).then( response => {
+				// if access is unauthorized
+					// sign out
+				if(response.status === 401) {
+					AveryGoodAuthenticator.signOut()
+				}
 			}).catch( error => {
 				console.error(error)
 			})
@@ -307,7 +333,7 @@ class AuthorItemManager extends Component {
 				method: 'DELETE',
 				headers
 			}).then( result => {
-				closeNotification()
+				cxloseNotification()
 				toastedNotes.notify(<Toast message="Item Deleted!" />, { duration: TOAST_DURATION })
 				navigate('/author/items/', { replace: true })
 			}).catch( error => {
