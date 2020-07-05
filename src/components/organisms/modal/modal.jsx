@@ -28,6 +28,9 @@ class InventoryItemModal extends Component {
 			mousetrap.bind(`space`, () => this.next())
 		}
 		this.setState( { enableNav })
+
+		const comments = document.querySelector('.comments')
+		console.log('A--', comments)
 	}
 	componentWillUnmount() {
 		const { enableNav } = this.state

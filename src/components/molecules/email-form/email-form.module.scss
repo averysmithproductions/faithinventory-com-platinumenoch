@@ -1,14 +1,9 @@
 @import "../../../sass/main.scss";
 $background-color: #e6ccbe;
 .emailForm {
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
 	background: $background-color;
 	border-top: 2px solid #c1ab9f;
 	padding: 30px;
-	border-bottom-left-radius: $corner-radius;
-	border-bottom-right-radius: $corner-radius;
 
 	.message {
 		padding-right: 25px;
@@ -20,9 +15,9 @@ $background-color: #e6ccbe;
 	}
 
 	.form {
-		width: 60%;
 		position: relative;
 		overflow: hidden;
+		margin-top: 20px;
 
 		input[type="text"] {
 			border: 2px solid #c1ab9f;
@@ -112,9 +107,15 @@ $background-color: #e6ccbe;
 	}
 }
 
-.blogPost {
+.fullWidth {
+	background: $background-color;
 	border-top: 2px solid rgba(85, 63, 61, .12);
-	margin: 0 -50px -50px;
+	margin: 0 -50px;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 
     .form {
 		width: 80%;
@@ -122,6 +123,7 @@ $background-color: #e6ccbe;
 	}
 
 	@media(max-width: $max-mobile-width) {
+		display: block;
 		margin-bottom: 0;
 	}
 
@@ -135,6 +137,6 @@ $background-color: #e6ccbe;
 	display: inline-block;
 	margin-top: 15px;
 	i {
-		font-size: 48px;
+		font-size: 40px;
 	}
 }

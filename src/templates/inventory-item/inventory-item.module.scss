@@ -142,6 +142,11 @@
   @media (max-width: $max-mobile-width) {
     margin-left: 10px;
     margin-right: 10px;
+
+    section .info {
+      overflow: initial;
+      max-height: none;
+    }
     
     section {
       overflow: hidden;

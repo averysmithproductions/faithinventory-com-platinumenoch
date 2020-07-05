@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react'
 import { graphql, navigate } from 'gatsby'
 import Img from 'gatsby-image'
-import { Button, SEO } from 'atoms'
+import { Button, CommentSection, SEO } from 'atoms'
 import { EmailForm } from 'molecules'
 import { InventoryItemActivityMenu, Layout } from 'organisms'
 import styles from './inventory-item.module.scss'
@@ -131,9 +131,10 @@ class InventoryItemTemplate extends Component {
 								onInventoryItemEvent={ e => this.onInventoryItemEvent(e) }
 								ref={this.inventoryItemActivityMenuRef}
 							/>
+							<EmailForm isModal={isModal} />
 						</div>
 					</section>
-					<EmailForm isModal={isModal} />
+					<CommentSection isModal={isModal} />
 				</div>
 			</Layout>
 		)

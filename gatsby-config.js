@@ -128,26 +128,45 @@ module.exports = {
       },
     },
     {
-        resolve: `gatsby-transformer-remark`,
-        options: {
-            excerpt_separator: '<!-- endexcerpt -->',
-            plugins: [
-                // gatsby-remark-relative-images must
-                // go before gatsby-remark-images
-                {
-                  resolve: `gatsby-remark-relative-images`,
+      resolve: `gatsby-transformer-remark`,
+      options: {
+          excerpt_separator: '<!-- endexcerpt -->',
+          plugins: [
+              // gatsby-remark-relative-images must
+              // go before gatsby-remark-images
+              {
+                resolve: `gatsby-remark-relative-images`,
+              },
+              {
+                resolve: `gatsby-remark-images`,
+                options: {
+                  // It's important to specify the maxWidth (in pixels) of
+                  // the content container as this plugin uses this as the
+                  // base for generating different widths of each image.
+                  maxWidth: 590,
                 },
-                {
-                  resolve: `gatsby-remark-images`,
-                  options: {
-                    // It's important to specify the maxWidth (in pixels) of
-                    // the content container as this plugin uses this as the
-                    // base for generating different widths of each image.
-                    maxWidth: 590,
-                  },
-                },
-            ],
-        },
+              },
+          ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-valine`,
+      options: {
+          avatarForce: true,
+          appId: process.env.LEANCLOUD_APP_ID,
+          appKey: process.env.LEANCLOUD_APP_KEY,
+          avatar: `hide`,
+          lang: 'en',
+          langMode: {
+            "nick": "nickname",
+            "mail": "email",
+            "nickFail": "Nick name cannot be less than 3 characters.",
+            "link": "Website"
+          },
+          enableQQ: true,
+          placeholder: `Leave a comment.`,
+          requiredFields: ['nick', 'mail']
+      }
     }
   ],
 }

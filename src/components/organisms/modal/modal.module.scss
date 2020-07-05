@@ -13,6 +13,7 @@
     align-items: center;
     justify-items: center;
     margin: auto;
+    padding: 50px;
     max-width: $max-tablet-width;
 
     .closeButton {
@@ -21,7 +22,7 @@
 	    font-size: 30px;
 	    position: absolute;
 	    top: 20px;
-	    right: 10px;
+	    right: 15px;
 
 	    &:hover,
 	    &:active,
@@ -37,15 +38,15 @@
 		user-select: none;
 		color: $button-color;
 
+		position: fixed;
+	    top: 50%;
+	    left: 0;
+
 		&:hover,
 	    &:active,
 	    &:focus {
 	    	color: #fff;
 	    }
-
-		@media(min-width: 321px) {
-			margin: 0 10px 0 10px;
-		}
 	}
 
 	.nextButton {
@@ -55,6 +56,10 @@
 		user-select: none;
 		color: $button-color;
 
+		position: fixed;
+	    top: 50%;
+	    right: 0;
+
 		&:hover,
 	    &:active,
 	    &:focus {
@@ -62,13 +67,21 @@
 	    		color: #fff;
 	    	}
 	    }
-
-		@media(min-width: 321px) {
-			margin: 0 10px 0 10px;
-		}
 	}
 
     img {
     	width: 100%;
     }
+
+    .previousButton,
+    .nextButton {
+		margin: 0 10px;
+	}
+
+	@media(min-width: $min-desktop-width) {
+		.previousButton,
+	    .nextButton {
+			margin: 0 15px;
+		}
+	}
 }

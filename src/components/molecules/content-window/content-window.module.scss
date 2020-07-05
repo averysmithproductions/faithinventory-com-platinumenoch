@@ -4,11 +4,10 @@
 	border-radius: 10px;
 	overflow: hidden;
 	background: #efded2;
-	/*border: 2px dashed #c7a08c;*/
 
 	.info .content {
 
-		padding: 30px 50px 50px;
+		padding: 30px 50px 0;
 
 		h3 {
 			font-size: 150%;
@@ -43,7 +42,7 @@
 
 		.info .content {
 
-			padding: 20px 30px 20px 40px;
+			padding: 20px 40px;
 
 			h3 {
 				font-size: 130%;
