@@ -153,8 +153,8 @@ module.exports = {
       resolve: `gatsby-plugin-valine`,
       options: {
           avatarForce: true,
-          appId: process.env.LEANCLOUD_APP_ID,
-          appKey: process.env.LEANCLOUD_APP_KEY,
+          appId: process.env.VALINE_LEANCLOUD_APP_ID,
+          appKey: process.env.VALINE_LEANCLOUD_APP_KEY,
           avatar: `hide`,
           lang: 'en',
           langMode: {
