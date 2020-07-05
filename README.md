@@ -44,8 +44,10 @@ AWS_SECRET_ACCESS_KEY=<awsSecretAccessKey>
 AWS_REGION=<awsRegion>
 AWS_MEDIA_BUCKET=<environment>-platinumenoch-media
 AWS_APP_BUCKET=<environment>-platinumenoch
-HOSTNAME=[<environment>.]<domainName>
+GATSBY_HOSTNAME=[<environment>.]<domainName>
 GATSBY_THALLIUMELI_API_KEY=<environmentThalliumEliApiKey>
+VALINE_LEANCLOUD_APP_ID=<valineLeanCloudAppId>
+VALINE_LEANCLOUD_APP_ID=<valineLeanCloudAppId>
 ```
 
 The ThalliumEli api key restricts requests to all `/api/1/admin/` routes that are performed by PlatinumEnoch. The value can be found at:
