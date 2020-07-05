@@ -8,6 +8,7 @@
     display: -webkit-flex;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
 	.plusButton {
 		margin-right: 15px;
@@ -23,7 +24,6 @@
         right: 0;
         width: auto;
     }
-
 
     @media(max-width: $max-tablet-width) {
 

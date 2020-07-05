@@ -47,7 +47,7 @@ class EmailForm extends Component {
 		const className = classNames({
 			[styles.emailForm]: true,
 			[styles.brighten]: !isModal,
-			[styles.blogPost]: mode === 'blogPost'
+			[styles.fullWidth]: mode === 'fullWidth'
 		})
 		return (
 			<div className={className}>
@@ -96,6 +96,6 @@ EmailForm.propTypes = {
 }
 EmailForm.defaultProps = {
 	isModal: false,
-	mode: 'inventoryItem' // inventoryItem|blogPost
+	mode: 'compact' // compact|fullWidth
 }
 export default EmailForm

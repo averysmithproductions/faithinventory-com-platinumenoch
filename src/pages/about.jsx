@@ -2,8 +2,8 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import ConcentricVictoriesSvg from '../assets/img/concentric-victories.svg'
-import { BannerImage, SEO } from 'atoms'
-import { ContentWindow } from 'molecules'
+import { BannerImage, CommentSection, SEO } from 'atoms'
+import { ContentWindow, EmailForm } from 'molecules'
 import { Layout } from "organisms"
 import styles from './about.module.scss'
 
@@ -55,6 +55,8 @@ const AboutPage = ({ data, location }) => (
 				<p>This could be likened unto a <a href="https://en.wikipedia.org/wiki/Faberg%C3%A9_egg" target="_blank">Fabergé egg</a>, or <a href="https://en.wikipedia.org/wiki/Concentric_objects" target="_blank">concentric circles</a>.</p>
 			</div>
 		</div>
+		<EmailForm mode="fullWidth" />
+		<CommentSection mode="fullWidth" />
 	</ContentWindow>
   </Layout>
 )

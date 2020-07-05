@@ -1,6 +1,7 @@
 import BannerImage from './banner-image/banner-image'
 import Button from './button/button'
 import CloseButton from './close-button/close-button'
+import CommentSection from './comment-section/comment-section'
 import DislikeButton from './dislike-button/dislike-button'
 import ImageUploader from './image-uploader/image-uploader'
 import LikeButton from './like-button/like-button'
@@ -20,6 +21,7 @@ export {
 	BannerImage,
 	Button,
 	CloseButton,
+	CommentSection,
 	DislikeButton,
 	ImageUploader,
 	LikeButton,
