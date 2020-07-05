@@ -1,5 +1,20 @@
 [
   {
+    "id": "00e8fbee-4eb1-41c4-9edc-f2dd8f73416f",
+    "createdAt": 1593988885,
+    "slugId": "ACMf6WyLQ5G2XHhS9iKuhA",
+    "title": "test",
+    "summary": "test",
+    "images": [
+      "inventory/items/a7470bf8-9e2f-4abb-b5f4-273ed16fb0d2.jpg"
+    ],
+    "categories": [
+      "food"
+    ],
+    "price": 3,
+    "moreInfoUrl": "test"
+  },
+  {
     "id": "1bc7bcc9-7c5b-4700-a6ad-cc0725f9e630",
     "createdAt": 1593781588,
     "slugId": "BpSnRI3dTva7Q9HeAczUNg",

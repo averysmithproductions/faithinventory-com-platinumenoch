@@ -127,7 +127,7 @@ class ImageUploader extends Component {
 				      <div {...getRootProps()}>
 				        <input {...getInputProps()} />
 		 		        <div className={styles.dropzone}>
-		 		        	<p>Drag 'n' drop some .jpg images here, or click to select files</p>
+		 		        	<p>Press here to add some .jpg images.</p>
 		 		        </div>
 				      </div>
 				    </section>

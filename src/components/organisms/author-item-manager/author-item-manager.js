@@ -160,6 +160,7 @@ class AuthorItemManager extends Component {
 						if(response.status === 401) {
 							AveryGoodAuthenticator.signOut()
 						}
+						return response
 					}).catch( error => {
 						console.error(error)
 					})
