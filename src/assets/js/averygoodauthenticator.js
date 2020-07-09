@@ -65,6 +65,10 @@ const AveryGoodAuthenticator = {
 							if (status === 200) {
 								const { setStorage, IS_SIGNED_IN_MAX_AGE } = AveryGoodAuthenticator.utils
 								setStorage('isSignedIn', 'true', IS_SIGNED_IN_MAX_AGE)
+								const authorizationHash = response.headers.get('x-amzn-remapped-authorization')
+								if (authorizationHash) {
+									setStorage('authorizationHash', authorizationHash, IS_SIGNED_IN_MAX_AGE)
+								}
 								resolve( { 'isVerified': true })
 							} else if (status === 401 ){
 								let message = await response.json()
