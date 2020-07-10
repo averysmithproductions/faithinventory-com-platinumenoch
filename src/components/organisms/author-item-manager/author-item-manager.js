@@ -110,7 +110,7 @@ class AuthorItemManager extends Component {
 			}
         }
 		preparePropToBeUpdated('title', titleValue)
-		preparePropToBeUpdated('summary', encodeURIComponent(summaryValue))
+		preparePropToBeUpdated('summary', encodeURIComponent(decodeURIComponent(summaryValue)))
 		preparePropToBeUpdated('categories', categoriesValue)
 		preparePropToBeUpdated('price', priceValue)
 		preparePropToBeUpdated('moreInfoUrl', moreInfoUrlValue)
