@@ -71,11 +71,11 @@ class AuthorItemManager extends Component {
 	    }
 	    if (this.props.mode === 'UPDATE') {
 	    	const { selectedItem } = this.props
-	    	state.categoriesValue = selectedItem.categories,
-			state.moreInfoUrlValue = selectedItem.moreInfoUrl,
-			state.priceValue = selectedItem.price,
-			state.selectedItem = selectedItem,
-			state.summaryValue = selectedItem.summary,
+	    	state.categoriesValue = selectedItem.categories
+			state.moreInfoUrlValue = selectedItem.moreInfoUrl
+			state.priceValue = selectedItem.price
+			state.selectedItem = selectedItem
+			state.summaryValue = selectedItem.summary
 			state.titleValue = selectedItem.title
 	    }
 	    this.setState({ ...state })
@@ -110,7 +110,7 @@ class AuthorItemManager extends Component {
 			}
         }
 		preparePropToBeUpdated('title', titleValue)
-		preparePropToBeUpdated('summary', summaryValue)
+		preparePropToBeUpdated('summary', encodeURIComponent(summaryValue))
 		preparePropToBeUpdated('categories', categoriesValue)
 		preparePropToBeUpdated('price', priceValue)
 		preparePropToBeUpdated('moreInfoUrl', moreInfoUrlValue)
@@ -426,7 +426,7 @@ class AuthorItemManager extends Component {
 													<Textarea
 														label="summary (required)"
 														placeholder="summary of item goes here"
-														defaultValue={selectedItem.summary}
+														defaultValue={decodeURIComponent(selectedItem.summary)}
 														onChange={e => {
 															this.setState({ summaryValue: e.target.value })
 														}}
