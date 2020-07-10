@@ -66,6 +66,8 @@ class InventoryItemTemplate extends Component {
 	    	[styles.brighten]: !isModal
 	    })
 
+	    const html = `<p>${decodeURIComponent(summary).split("\n").join("<br/>")}</p>`
+
 		return (
 			<Layout
 				inventoryItemEvent={this.state.inventoryItemEvent}
@@ -121,7 +123,7 @@ class InventoryItemTemplate extends Component {
 									)
 								)}</div>
 								<div className={styles.description}>
-									<p>{summary}</p>
+									<div dangerouslySetInnerHTML={{'__html': html }} />
 								</div>
 								<p><em>{`appx $${price}`}</em></p>
 							</div>
