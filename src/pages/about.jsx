@@ -55,7 +55,12 @@ const AboutPage = ({ data, location }) => (
 				<p>This could be likened unto a <a href="https://en.wikipedia.org/wiki/Faberg%C3%A9_egg" target="_blank">Fabergé egg</a>, or <a href="https://en.wikipedia.org/wiki/Concentric_objects" target="_blank">concentric circles</a>.</p>
 			</div>
 		</div>
-		<EmailForm mode="fullWidth" />
+		<p>
+			---
+			<br />
+			<a href="/api/1/docs/" target="_blank">Faith Inventory API Docs</a>
+		</p>
+		<EmailForm />
 		<CommentSection mode="fullWidth" />
 	</ContentWindow>
   </Layout>

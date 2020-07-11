@@ -30,7 +30,6 @@ class InventoryItemModal extends Component {
 		this.setState( { enableNav })
 
 		const comments = document.querySelector('.comments')
-		console.log('A--', comments)
 	}
 	componentWillUnmount() {
 		const { enableNav } = this.state

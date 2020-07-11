@@ -45,13 +45,14 @@ export const pageQuery = graphql`
 query ($id: String!) {
   item: inventoryItems(id: {eq: $id}) {
   	alternative_id
+  	categories
     id
-    title
-    summary
     images
-    categories
-    price
     moreInfoUrl
+    price
+    scriptureAddress
+    summary
+    title
   }
 }
 `

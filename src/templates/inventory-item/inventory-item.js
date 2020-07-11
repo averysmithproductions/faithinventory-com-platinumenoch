@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 import { graphql, navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import { Button, CommentSection, SEO } from 'atoms'
-import { EmailForm } from 'molecules'
+import { EmailForm, ScriptureSection } from 'molecules'
 import { InventoryItemActivityMenu, Layout } from 'organisms'
 import styles from './inventory-item.module.scss'
 import { ButtonBack, ButtonNext, CarouselProvider, DotGroup, Image, Slide, Slider } from 'pure-react-carousel'
@@ -38,11 +38,12 @@ class InventoryItemTemplate extends Component {
 		const { data, location, pageContext: { s3ObjectList } } = this.props
 		const {
 	    	//id,
-	    	title,
-	        summary,
-	        categories,
-	        price,
+	    	categories,
+	    	price,
 	        moreInfoUrl,
+	        scriptureAddress,
+	        summary,
+	        title
 	    } = data.item
 		let isModal = false
 	    // We don't want to show the modal if
@@ -119,6 +120,7 @@ class InventoryItemTemplate extends Component {
 												navigate(`/i/category/${category}`)
 											}}
 											className={styles.iconButton}
+											fontIcon={`category-${category}`}
 										/>
 									)
 								)}</div>
@@ -133,10 +135,13 @@ class InventoryItemTemplate extends Component {
 								onInventoryItemEvent={ e => this.onInventoryItemEvent(e) }
 								ref={this.inventoryItemActivityMenuRef}
 							/>
-							<EmailForm isModal={isModal} />
 						</div>
 					</section>
+					{scriptureAddress && <ScriptureSection address={scriptureAddress} isModal={isModal} />}
 					<CommentSection isModal={isModal} />
+					<div className={styles.emailForm}>
+						<EmailForm isModal={isModal} />
+					</div>
 				</div>
 			</Layout>
 		)
@@ -147,13 +152,14 @@ export const pageQuery = graphql`
 query ($id: String!) {
   item: inventoryItems(id: {eq: $id}) {
   	alternative_id
+  	categories
     id
-    title
-    summary
     images
-    categories
-    price
     moreInfoUrl
+    price
+    scriptureAddress
+    summary
+    title
   }
 }
 `

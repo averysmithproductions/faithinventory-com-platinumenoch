@@ -18,15 +18,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 			    edges {
 			      node {
 			      	alternative_id
+			      	categories
 			      	createdAt
 			        id
-			        title
-			        summary
 			        images
-			        categories
-			        price
 			        moreInfoUrl
+			        price
+			        summary
+			        scriptureAddress
 			        slugId
+			        title
 			      }
 			    }
 			  }

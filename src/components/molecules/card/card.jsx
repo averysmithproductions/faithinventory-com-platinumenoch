@@ -25,7 +25,7 @@ const Card = ({ categories, history, image, inventoryItems, price, slugId, title
 						}}
 						className={styles.iconButton}
 					>
-						<i className={`font-icon-${category}`} />
+						<i className={`font-icon-category-${category}`} />
 					</div>
 				)
 			)}</div>

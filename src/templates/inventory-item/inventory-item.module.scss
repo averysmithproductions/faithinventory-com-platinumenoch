@@ -171,6 +171,17 @@
     }
 }
 
+.emailForm {
+  border-bottom-left-radius: $corner-radius;
+  border-bottom-right-radius: $corner-radius;
+  overflow: hidden;
+
+  > div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .brighten {
    
    background: $button-color;

@@ -7,6 +7,7 @@ import ContentWindow from './content-window/content-window'
 import EmailForm from './email-form/email-form'
 import Excerpt from './excerpt/excerpt'
 import MainNav from './main-nav/main-nav'
+import ScriptureSection from './scripture-section/scripture-section'
 import ShareMenu from './share-menu/share-menu'
 import TaxonomyFilter from './taxonomy-filter/taxonomy-filter'
 
@@ -20,6 +21,7 @@ export {
 	EmailForm,
 	Excerpt,
 	MainNav,
+	ScriptureSection,
 	ShareMenu,
 	TaxonomyFilter
 }

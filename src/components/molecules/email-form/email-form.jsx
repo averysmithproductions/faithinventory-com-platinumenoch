@@ -34,7 +34,6 @@ class EmailForm extends Component {
 			})
 		}
 	}
-
 	render() {
 		const {
 			emailInputPlaceholder,
@@ -46,8 +45,7 @@ class EmailForm extends Component {
 		const { isModal, mode } = this.props
 		const className = classNames({
 			[styles.emailForm]: true,
-			[styles.brighten]: !isModal,
-			[styles.fullWidth]: mode === 'fullWidth'
+			[styles.brighten]: !isModal && typeof window !== `undefined` && window.location.pathname.includes('/i/')
 		})
 		return (
 			<div className={className}>
@@ -91,11 +89,9 @@ class EmailForm extends Component {
 	}
 }
 EmailForm.propTypes = {
-	isModal: PropTypes.bool,
-	mode: PropTypes.string
+	isModal: PropTypes.bool
 }
 EmailForm.defaultProps = {
-	isModal: false,
-	mode: 'compact' // compact|fullWidth
+	isModal: false
 }
 export default EmailForm
