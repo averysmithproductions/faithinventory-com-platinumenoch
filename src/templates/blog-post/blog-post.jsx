@@ -36,7 +36,7 @@ const BlogPost = ({ location, pageContext }) => {
 			<ContentWindow bannerImage={bannerImage}>
 				<div dangerouslySetInnerHTML={{'__html': html }} />
 				<BlogPostActivityMenu author={author} date={date} tags={tags} />
-				<EmailForm mode="fullWidth" />
+				<EmailForm />
 				<CommentSection mode="fullWidth" />
 			</ContentWindow>
 			<BlogNavbar next={next} previous={previous} />

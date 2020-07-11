@@ -32,6 +32,7 @@ class AuthorItemManager extends Component {
 			previouslySavedImagesValue: {},
 			priceValue: -1,
 			s3: [],
+			scriptureAddressValue: '',
 			selectedItem: {},
 			summaryValue: '',
 			titleValue: ''
@@ -77,6 +78,7 @@ class AuthorItemManager extends Component {
 			state.selectedItem = selectedItem
 			state.summaryValue = selectedItem.summary
 			state.titleValue = selectedItem.title
+			state.scriptureAddressValue = selectedItem.scriptureAddress
 	    }
 	    this.setState({ ...state })
 	}
@@ -98,6 +100,7 @@ class AuthorItemManager extends Component {
 			previouslySavedImageFilenames,
 			previouslySavedImagesValue,
 			priceValue,
+			scriptureAddressValue,
 			selectedItem,
 			summaryValue,
 			titleValue
@@ -114,6 +117,7 @@ class AuthorItemManager extends Component {
 		preparePropToBeUpdated('categories', categoriesValue)
 		preparePropToBeUpdated('price', priceValue)
 		preparePropToBeUpdated('moreInfoUrl', moreInfoUrlValue)
+		scriptureAddressValue && preparePropToBeUpdated('scriptureAddress', scriptureAddressValue)
 		try {
 			// validate parameters
 			const keys = [
@@ -382,6 +386,14 @@ class AuthorItemManager extends Component {
 														this.setState({ summaryValue: e.target.value })
 													}}
 												/>
+												<Textfield
+													label="scripture (optional). For now this can only support references from the 66 Books of the Protestant Canon."
+													type="text"
+													placeholder="Matthew 6:2-8"
+													onChange={e => {
+														this.setState({ scriptureAddressValue: e.target.value })
+													}}
+												/>
 												<Select
 													label="categories (required)"
 													placeholder="select..."
@@ -429,6 +441,15 @@ class AuthorItemManager extends Component {
 														defaultValue={decodeURIComponent(selectedItem.summary)}
 														onChange={e => {
 															this.setState({ summaryValue: e.target.value })
+														}}
+													/>
+													<Textfield
+														label="scripture (optional, can only support references from the 66 books of the protestant canon for now)"
+														type="text"
+														placeholder="Matthew 6:2-8"
+														defaultValue={selectedItem.scriptureAddress}
+														onChange={e => {
+															this.setState({ scriptureAddressValue: e.target.value })
 														}}
 													/>
 													<Select

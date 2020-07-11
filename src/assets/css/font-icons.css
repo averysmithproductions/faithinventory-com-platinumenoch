@@ -27,6 +27,18 @@
 .font-icon-avery-signature:before {
   content: "\e922";
 }
+.font-icon-category-recreation:before {
+  content: "\e906";
+}
+.font-icon-category-sanitary:before {
+  content: "\e926";
+}
+.font-icon-category-shelter:before {
+  content: "\e925";
+}
+.font-icon-scroll:before {
+  content: "\e924";
+}
 .font-icon-time:before {
   content: "\e923";
 }
@@ -78,10 +90,10 @@
 .font-icon-averygoodidea-logo:before {
   content: "\e901";
 }
-.font-icon-spiritual:before {
+.font-icon-category-spiritual:before {
   content: "\e91b";
 }
-.font-icon-health:before {
+.font-icon-category-healthcare:before {
   content: "\e91a";
 }
 .font-icon-envelope:before {
@@ -108,25 +120,22 @@
 .font-icon-left:before {
   content: "\e90e";
 }
-.font-icon-book:before {
+.font-icon-category-books:before {
   content: "\e90f";
 }
-.font-icon-technology:before {
+.font-icon-category-gadgets:before {
   content: "\e90d";
 }
-.font-icon-communication:before {
-  content: "\e906";
-}
-.font-icon-water:before {
+.font-icon-category-water:before {
   content: "\e905";
 }
-.font-icon-fire:before {
+.font-icon-category-fire:before {
   content: "\e902";
 }
-.font-icon-clothing:before {
+.font-icon-category-clothing:before {
   content: "\e903";
 }
-.font-icon-food:before {
+.font-icon-category-food:before {
   content: "\e904";
 }
 .font-icon-school-backpack:before {
