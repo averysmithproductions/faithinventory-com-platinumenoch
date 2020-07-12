@@ -71,13 +71,13 @@ class InventoryItemActivityMenu extends Component {
 		return (
 			<div className={styles.activityMenu}>
 				<div className={styles.plusButton}>
-					{!hasBeenCollected && <LikeButton
+					{!hasBeenCollected && <DislikeButton
 						onClick={ e => {
 							e.preventDefault()
 							this.addToList()
 						}}
 					/>}
-					{hasBeenCollected && <DislikeButton
+					{hasBeenCollected && <LikeButton
 						onClick={ e => {
 							e.preventDefault()
 							this.removeFromList()

@@ -338,7 +338,7 @@ class AuthorItemManager extends Component {
 				method: 'DELETE',
 				headers
 			}).then( result => {
-				cxloseNotification()
+				closeNotification()
 				toastedNotes.notify(<Toast message="Item Deleted!" />, { duration: TOAST_DURATION })
 				navigate('/author/items/', { replace: true })
 			}).catch( error => {
