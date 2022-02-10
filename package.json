@@ -30,7 +30,7 @@
     "molecules": "file:src/components/molecules",
     "moment": "^2.26.0",
     "mousetrap": "^1.6.5",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "organisms": "file:src/components/organisms",
     "prop-types": "^15.7.2",
     "pure-react-carousel": "^1.27.0",
