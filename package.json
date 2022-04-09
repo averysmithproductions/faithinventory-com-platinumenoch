@@ -28,7 +28,7 @@
     "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.4.3",
     "molecules": "file:src/components/molecules",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "mousetrap": "^1.6.5",
     "node-sass": "^4.13.1",
     "organisms": "file:src/components/organisms",
